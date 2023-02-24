@@ -103,7 +103,7 @@ void SysIdLogger::SendData() {
   }
 
   std::string type = m_testType == "Dynamic" ? "fast" : "slow";
-  std::string direction = m_voltageCommand > 0 ? "forward" : "backward";
+  std::string direction = "forward";
   std::string test = fmt::format("{}-{}", type, direction);
 
   frc::SmartDashboard::PutString("SysIdTelemetry",

@@ -168,9 +168,7 @@ void Logger::Display() {
   };
 
   CreateTest("Quasistatic Forward", "slow-forward");
-  CreateTest("Quasistatic Backward", "slow-backward");
   CreateTest("Dynamic Forward", "fast-forward");
-  CreateTest("Dynamic Backward", "fast-backward");
 
   m_manager->RegisterDisplayCallback(
       [this](const auto& str) { m_popupText = str; });

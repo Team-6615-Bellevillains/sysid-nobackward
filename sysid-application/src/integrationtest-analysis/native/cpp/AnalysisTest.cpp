@@ -41,8 +41,8 @@ constexpr double kArmG = 0.125;
 // mechanisms.
 class AnalysisTest : public ::testing::Test {
  public:
-  static constexpr const char* kTests[] = {"slow-forward", "slow-backward",
-                                           "fast-forward", "fast-backward"};
+  static constexpr const char* kTests[] = {"slow-forward",
+                                           "fast-forward"};
 
   static void SetUpTestSuite() {
     m_nt = nt::NetworkTableInstance::GetDefault();

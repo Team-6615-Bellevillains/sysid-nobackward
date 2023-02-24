@@ -403,7 +403,7 @@ void Analyzer::DisplayGraphs() {
 
   ImGui::SameLine();
   ImGui::SetNextItemWidth(ImGui::GetFontSize() * 6);
-  const char* items[] = {"Forward", "Backward"};
+  const char* items[] = {"Forward"};
   if (ImGui::Combo("Direction", &m_plot.m_direction, items, 2)) {
     if (!IsErrorState()) {
       PrepareGraphs();

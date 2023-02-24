@@ -53,7 +53,7 @@ class AnalyzerPlot {
    */
   void SetData(const Storage& rawData, const Storage& filteredData,
                std::string_view unit, const std::vector<double>& ff,
-               const std::array<units::second_t, 4>& startTimes,
+               const std::array<units::second_t, 2>& startTimes,
                AnalysisType type, std::atomic<bool>& abort);
 
   /**

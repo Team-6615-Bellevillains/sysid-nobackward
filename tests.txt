@@ -1,0 +1,121 @@
+> Task :sysid-application:runSysidTestReleaseGoogleTestExe
+[==========] Running 29 tests from 9 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from HardwareTypeTest
+[ RUN      ] HardwareTypeTest.FromMotorControllerName
+[       OK ] HardwareTypeTest.FromMotorControllerName (0 ms)
+[ RUN      ] HardwareTypeTest.FromEncoderName
+[       OK ] HardwareTypeTest.FromEncoderName (0 ms)
+[ RUN      ] HardwareTypeTest.FromGyroName
+[       OK ] HardwareTypeTest.FromGyroName (0 ms)
+[----------] 3 tests from HardwareTypeTest (0 ms total)
+
+[----------] 3 tests from FilterTest
+[ RUN      ] FilterTest.MedianFilter
+[       OK ] FilterTest.MedianFilter (0 ms)
+[ RUN      ] FilterTest.NoiseFloor
+[       OK ] FilterTest.NoiseFloor (0 ms)
+[ RUN      ] FilterTest.StepTrim
+[       OK ] FilterTest.StepTrim (0 ms)
+[----------] 3 tests from FilterTest (0 ms total)
+
+[----------] 1 test from LinearFilterOutputTest
+[ RUN      ] LinearFilterOutputTest.CentralFiniteDifference
+[       OK ] LinearFilterOutputTest.CentralFiniteDifference (6 ms)
+[----------] 1 test from LinearFilterOutputTest (6 ms total)
+
+[----------] 1 test from AnalysisTypeTest
+[ RUN      ] AnalysisTypeTest.FromName
+[       OK ] AnalysisTypeTest.FromName (0 ms)
+[----------] 1 test from AnalysisTypeTest (0 ms total)
+
+[----------] 10 tests from FeedforwardAnalysisTest
+[ RUN      ] FeedforwardAnalysisTest.Arm1
+[       OK ] FeedforwardAnalysisTest.Arm1 (9 ms)
+[ RUN      ] FeedforwardAnalysisTest.Arm2
+[       OK ] FeedforwardAnalysisTest.Arm2 (9 ms)
+[ RUN      ] FeedforwardAnalysisTest.Drivetrain1
+C:\Users\robot\Desktop\Robotics\sysid\sysid-application\src\test\native\cpp\analysis\FeedforwardAnalysisTest.cpp(113): error: The difference between gains[0] and Ks is 0.0075238619066224643, which exceeds 0.003, where
+gains[0] evaluates to 1.0024761380933775,
+Ks evaluates to 1.01, and
+0.003 evaluates to 0.0030000000000000001.
+C:\Users\robot\Desktop\Robotics\sysid\sysid-application\src\test\native\cpp\analysis\FeedforwardAnalysisTest.cpp(114): error: The difference between gains[1] and Kv is 0.0041376887198949497, which exceeds 0.003, where
+gains[1] evaluates to 3.064137688719895,
+Kv evaluates to 3.0600000000000001, and
+0.003 evaluates to 0.0030000000000000001.
+[  FAILED  ] FeedforwardAnalysisTest.Drivetrain1 (7 ms)
+[ RUN      ] FeedforwardAnalysisTest.Drivetrain2
+[       OK ] FeedforwardAnalysisTest.Drivetrain2 (4 ms)
+[ RUN      ] FeedforwardAnalysisTest.DrivetrainAngular1
+C:\Users\robot\Desktop\Robotics\sysid\sysid-application\src\test\native\cpp\analysis\FeedforwardAnalysisTest.cpp(143): error: The difference between gains[0] and Ks is 0.0075238619066224643, which exceeds 0.003, where
+gains[0] evaluates to 1.0024761380933775,
+Ks evaluates to 1.01, and
+0.003 evaluates to 0.0030000000000000001.
+C:\Users\robot\Desktop\Robotics\sysid\sysid-application\src\test\native\cpp\analysis\FeedforwardAnalysisTest.cpp(144): error: The difference between gains[1] and Kv is 0.0041376887198949497, which exceeds 0.003, where
+gains[1] evaluates to 3.064137688719895,
+Kv evaluates to 3.0600000000000001, and
+0.003 evaluates to 0.0030000000000000001.
+[  FAILED  ] FeedforwardAnalysisTest.DrivetrainAngular1 (7 ms)
+[ RUN      ] FeedforwardAnalysisTest.DrivetrainAngular2
+[       OK ] FeedforwardAnalysisTest.DrivetrainAngular2 (5 ms)
+[ RUN      ] FeedforwardAnalysisTest.Elevator1
+[       OK ] FeedforwardAnalysisTest.Elevator1 (4 ms)
+[ RUN      ] FeedforwardAnalysisTest.Elevator2
+[       OK ] FeedforwardAnalysisTest.Elevator2 (5 ms)
+[ RUN      ] FeedforwardAnalysisTest.Simple1
+C:\Users\robot\Desktop\Robotics\sysid\sysid-application\src\test\native\cpp\analysis\FeedforwardAnalysisTest.cpp(207): error: The difference between gains[0] and Ks is 0.0075238619066224643, which exceeds 0.003, where
+gains[0] evaluates to 1.0024761380933775,
+Ks evaluates to 1.01, and
+0.003 evaluates to 0.0030000000000000001.
+C:\Users\robot\Desktop\Robotics\sysid\sysid-application\src\test\native\cpp\analysis\FeedforwardAnalysisTest.cpp(208): error: The difference between gains[1] and Kv is 0.0041376887198949497, which exceeds 0.003, where
+gains[1] evaluates to 3.064137688719895,
+Kv evaluates to 3.0600000000000001, and
+0.003 evaluates to 0.0030000000000000001.
+[  FAILED  ] FeedforwardAnalysisTest.Simple1 (4 ms)
+[ RUN      ] FeedforwardAnalysisTest.Simple2
+[       OK ] FeedforwardAnalysisTest.Simple2 (6 ms)
+[----------] 10 tests from FeedforwardAnalysisTest (67 ms total)
+
+[----------] 1 test from TrackWidthAnalysisTest
+[ RUN      ] TrackWidthAnalysisTest.Calculate
+[       OK ] TrackWidthAnalysisTest.Calculate (0 ms)
+[----------] 1 test from TrackWidthAnalysisTest (0 ms total)
+
+[----------] 2 tests from OLSTest
+[ RUN      ] OLSTest.TwoVariablesTwoPoints
+[       OK ] OLSTest.TwoVariablesTwoPoints (2 ms)
+[ RUN      ] OLSTest.TwoVariablesFivePoints
+[       OK ] OLSTest.TwoVariablesFivePoints (0 ms)
+[----------] 2 tests from OLSTest (2 ms total)
+
+[----------] 7 tests from FeedbackAnalysisTest
+[ RUN      ] FeedbackAnalysisTest.Velocity1
+[       OK ] FeedbackAnalysisTest.Velocity1 (1 ms)
+[ RUN      ] FeedbackAnalysisTest.Velocity2
+[       OK ] FeedbackAnalysisTest.Velocity2 (0 ms)
+[ RUN      ] FeedbackAnalysisTest.VelocityConversion
+[       OK ] FeedbackAnalysisTest.VelocityConversion (0 ms)
+[ RUN      ] FeedbackAnalysisTest.VelocityCTRE
+[       OK ] FeedbackAnalysisTest.VelocityCTRE (0 ms)
+[ RUN      ] FeedbackAnalysisTest.VelocityCTREConversion
+[       OK ] FeedbackAnalysisTest.VelocityCTREConversion (0 ms)
+[ RUN      ] FeedbackAnalysisTest.VelocityREV
+[       OK ] FeedbackAnalysisTest.VelocityREV (0 ms)
+[ RUN      ] FeedbackAnalysisTest.VelocityREVConversion
+[       OK ] FeedbackAnalysisTest.VelocityREVConversion (0 ms)
+[----------] 7 tests from FeedbackAnalysisTest (1 ms total)
+
+[----------] 1 test from DeployTest
+[ RUN      ] DeployTest.JSONGeneration
+[       OK ] DeployTest.JSONGeneration (0 ms)
+[----------] 1 test from DeployTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 29 tests from 9 test suites ran. (80 ms total)
+[  PASSED  ] 26 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] FeedforwardAnalysisTest.Drivetrain1
+[  FAILED  ] FeedforwardAnalysisTest.DrivetrainAngular1
+[  FAILED  ] FeedforwardAnalysisTest.Simple1
+
+ 3 FAILED TESTS

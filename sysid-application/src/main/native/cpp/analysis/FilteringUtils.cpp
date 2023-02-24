@@ -214,19 +214,7 @@ units::second_t sysid::GetMeanTimeDelta(const Storage& data) {
     }
   }
 
-  for (const auto& pt : data.slowBackward) {
-    if (pt.dt > 0_s && pt.dt < 500_ms) {
-      dts.emplace_back(pt.dt);
-    }
-  }
-
   for (const auto& pt : data.fastForward) {
-    if (pt.dt > 0_s && pt.dt < 500_ms) {
-      dts.emplace_back(pt.dt);
-    }
-  }
-
-  for (const auto& pt : data.fastBackward) {
     if (pt.dt > 0_s && pt.dt < 500_ms) {
       dts.emplace_back(pt.dt);
     }

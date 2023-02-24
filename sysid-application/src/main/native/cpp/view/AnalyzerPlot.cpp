@@ -27,7 +27,7 @@ static ImPlotPoint Getter(int idx, void* data) {
 template <typename Model>
 static std::vector<std::vector<ImPlotPoint>> PopulateTimeDomainSim(
     const std::vector<PreparedData>& data,
-    const std::array<units::second_t, 4>& startTimes, size_t step, Model model,
+    const std::array<units::second_t, 2>& startTimes, size_t step, Model model,
     double* simSquaredErrorSum, double* squaredVariationSum,
     int* timeSeriesPoints) {
   // Create the vector of ImPlotPoints that will contain our simulated data.
@@ -113,9 +113,9 @@ void AnalyzerPlot::SetGraphLabels(std::string_view unit) {
 
 void AnalyzerPlot::SetRawData(const Storage& data, std::string_view unit,
                               std::atomic<bool>& abort) {
-  const auto& [slowForward, slowBackward, fastForward, fastBackward] = data;
-  const auto& slow = m_direction == 0 ? slowForward : slowBackward;
-  const auto& fast = m_direction == 0 ? fastForward : fastBackward;
+  const auto& [slowForward, fastForward] = data;
+  const auto& slow = slowForward;
+  const auto& fast = fastForward;
 
   SetGraphLabels(unit);
 
@@ -128,7 +128,7 @@ void AnalyzerPlot::SetRawData(const Storage& data, std::string_view unit,
 void AnalyzerPlot::SetData(const Storage& rawData, const Storage& filteredData,
                            std::string_view unit,
                            const std::vector<double>& ffGains,
-                           const std::array<units::second_t, 4>& startTimes,
+                           const std::array<units::second_t, 2>& startTimes,
                            AnalysisType type, std::atomic<bool>& abort) {
   double simSquaredErrorSum = 0;
   double squaredVariationSum = 0;
@@ -138,16 +138,16 @@ void AnalyzerPlot::SetData(const Storage& rawData, const Storage& filteredData,
   const auto& Kv = ffGains[1];
   const auto& Ka = ffGains[2];
 
-  auto& [slowForward, slowBackward, fastForward, fastBackward] = filteredData;
-  auto& [rawSlowForward, rawSlowBackward, rawFastForward, rawFastBackward] =
+  auto& [slowForward, fastForward] = filteredData;
+  auto& [rawSlowForward, rawFastForward] =
       rawData;
 
-  const auto slow = AnalysisManager::DataConcat(slowForward, slowBackward);
-  const auto fast = AnalysisManager::DataConcat(fastForward, fastBackward);
+  const auto slow = AnalysisManager::DataConcat(slowForward);
+  const auto fast = AnalysisManager::DataConcat(fastForward);
   const auto rawSlow =
-      AnalysisManager::DataConcat(rawSlowForward, rawSlowBackward);
+      AnalysisManager::DataConcat(rawSlowForward);
   const auto rawFast =
-      AnalysisManager::DataConcat(rawFastForward, rawFastBackward);
+      AnalysisManager::DataConcat(rawFastForward);
 
   SetGraphLabels(unit);
 
@@ -164,10 +164,10 @@ void AnalyzerPlot::SetData(const Storage& rawData, const Storage& filteredData,
 
   // Velocity-vs-time plots
   {
-    const auto& slow = m_direction == 0 ? slowForward : slowBackward;
-    const auto& fast = m_direction == 0 ? fastForward : fastBackward;
-    const auto& rawSlow = m_direction == 0 ? rawSlowForward : rawSlowBackward;
-    const auto& rawFast = m_direction == 0 ? rawFastForward : rawFastBackward;
+    const auto& slow = slowForward;
+    const auto& fast = fastForward;
+    const auto& rawSlow = rawSlowForward;
+    const auto& rawFast = rawFastForward;
 
     // Populate quasistatic time-domain graphs
     for (size_t i = 0; i < slow.size(); i += slowStep) {

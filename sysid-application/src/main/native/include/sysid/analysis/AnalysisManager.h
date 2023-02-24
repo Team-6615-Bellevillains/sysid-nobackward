@@ -130,7 +130,7 @@ class AnalysisManager {
    * The keys (which contain sysid data) that are in the JSON to analyze.
    */
   static constexpr const char* kJsonDataKeys[] = {
-      "slow-forward", "slow-backward", "fast-forward", "fast-backward"};
+      "slow-forward", "fast-forward"};
 
   /**
    * Concatenates a list of vectors. The contents of the source vectors are
@@ -307,7 +307,7 @@ class AnalysisManager {
    *
    * @return The start times for each test
    */
-  const std::array<units::second_t, 4>& GetStartTimes() const {
+  const std::array<units::second_t, 2>& GetStartTimes() const {
     return m_startTimes;
   }
 
@@ -329,7 +329,7 @@ class AnalysisManager {
   std::array<Storage, 3> m_filteredDataset;
 
   // Stores the various start times of the different tests.
-  std::array<units::second_t, 4> m_startTimes;
+  std::array<units::second_t, 2> m_startTimes;
 
   // The settings for this instance. This contains pointers to the feedback
   // controller preset, LQR parameters, acceleration window size, etc.

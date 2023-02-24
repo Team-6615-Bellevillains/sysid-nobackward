@@ -25,35 +25,7 @@ Example JSON:
 
 ```json
 {
-"fast-backward": [
-[
-timestamp 1,
-voltage 1,
-position 1,
-velocity 1
-],
-[
-timestamp 2,
-voltage 2,
-position 2,
-velocity 2
-]
-],
 "fast-forward": [
-[
-timestamp 1,
-voltage 1,
-position 1,
-velocity 1
-],
-[
-timestamp 2,
-voltage 2,
-position 2,
-velocity 2
-]
-],
-"slow-backward": [
 [
 timestamp 1,
 voltage 1,
@@ -102,55 +74,7 @@ Example JSON:
 
 ```json
 {
-"fast-backward": [
-[
-timestamp 1,
-l voltage 1,
-r voltage 1,
-l position 1,
-r position 1,
-l velocity 1,
-r velocity 1,
-angle 1,
-angular rate 1
-],
-[
-timestamp 2,
-l voltage 2,
-r voltage 2,
-l position 2,
-r position 2,
-l velocity 2,
-r velocity 2,
-angle 2,
-angular rate 2
-]
-],
 "fast-forward": [
-[
-timestamp 1,
-l voltage 1,
-r voltage 1,
-l position 1,
-r position 1,
-l velocity 1,
-r velocity 1,
-angle 1,
-angular rate 1
-],
-[
-timestamp 2,
-l voltage 2,
-r voltage 2,
-l position 2,
-r position 2,
-l velocity 2,
-r velocity 2,
-angle 2,
-angular rate 2
-]
-],
-"slow-backward": [
 [
 timestamp 1,
 l voltage 1,
